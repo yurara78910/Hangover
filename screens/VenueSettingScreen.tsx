@@ -1,14 +1,14 @@
 import { FontAwesome } from '@expo/vector-icons';
 import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
-import NomalText from '../components/texts/NormalText';
+import CircleButton from '../components/buttons/CircleButton';
 
 export default function VenueSettingScreen() {
   return (
     <View style={styles.container}>
-      <View style={styles.circleButton}>
+      <CircleButton>
         <FontAwesome style={{ color: '#ffffff' }} name="plus" size={32} />
-      </View>
+      </CircleButton>
     </View>
   );
 }

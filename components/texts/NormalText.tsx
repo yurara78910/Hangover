@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-function NomalText(props: { children: string; style: any }) {
+export default function NomalText(props: { children: string; style: any }) {
   const { children, style } = props;
   return (
     <View>
@@ -17,9 +17,7 @@ NomalText.defaultProps = {
 const styles = StyleSheet.create({
   text: {
     color: 'white',
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: 'normal',
   },
 });
-
-export default NomalText;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-function SubtitleText(props: { children: string; style: any }) {
+export default function SubtitleText(props: { children: string; style: any }) {
   const { children, style } = props;
   return (
     <View>
@@ -21,5 +21,3 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 });
-
-export default SubtitleText;

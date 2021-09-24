@@ -1,3 +1,4 @@
+import { FontAwesome } from '@expo/vector-icons';
 import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
 import NomalText from '../components/texts/NormalText';
@@ -14,7 +15,7 @@ export default function GameHistoryScreen() {
           <NomalText>300円</NomalText>
         </View>
         <View>
-          <NomalText>X</NomalText>
+          <FontAwesome style={{ color: '#ffffff' }} name="remove" size={24} />
         </View>
       </View>
 
@@ -26,7 +27,7 @@ export default function GameHistoryScreen() {
           <NomalText>300円</NomalText>
         </View>
         <View>
-          <NomalText>X</NomalText>
+          <FontAwesome style={{ color: '#ffffff' }} name="remove" size={24} />
         </View>
       </View>
 
@@ -38,7 +39,7 @@ export default function GameHistoryScreen() {
           <NomalText>300円</NomalText>
         </View>
         <View>
-          <NomalText>X</NomalText>
+          <FontAwesome style={{ color: '#ffffff' }} name="remove" size={24} />
         </View>
       </View>
     </View>
