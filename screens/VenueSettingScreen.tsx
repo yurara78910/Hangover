@@ -1,15 +1,25 @@
 import { FontAwesome } from '@expo/vector-icons';
 import * as React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, KeyboardAvoidingView } from 'react-native';
+import { TextInput } from 'react-native-gesture-handler';
 import CircleButton from '../components/buttons/CircleButton';
+import TitleText from '../components/texts/TitleText';
 
 export default function VenueSettingScreen() {
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView style={styles.container} behavior="height">
+      <View style={styles.column}>
+        <View>
+          <TitleText>会場コード</TitleText>
+        </View>
+        <View style={styles.inputContainer}>
+          <TextInput value="aaaaaaaaaaaaaaaa" style={styles.input} />
+        </View>
+      </View>
       <CircleButton>
         <FontAwesome style={{ color: '#ffffff' }} name="plus" size={32} />
       </CircleButton>
-    </View>
+    </KeyboardAvoidingView>
   );
 }
 
@@ -18,20 +28,21 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(56,56,56,0.8)',
     flex: 1,
   },
-  circleButton: {
-    backgroundColor: 'rgba(29,31,33,0.8)',
-    width: 64,
-    height: 64,
-    borderRadius: 32,
-    justifyContent: 'center',
-    alignItems: 'center',
-    position: 'absolute',
-    right: 40,
-    bottom: 40,
-    shadowColor: '#000000',
-    shadowOffset: { width: 0, height: 30 },
-    shadowOpacity: 0.25,
-    shadowRadius: 8,
-    elevation: 8,
+  column: {
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+    paddingHorizontal: 24,
+    paddingVertical: 32,
+  },
+  inputContainer: {
+    paddingHorizontal: 8,
+    paddingVertical: 16,
+    borderWidth: 1,
+    width: '100%',
+  },
+  input: {
+    textAlignVertical: 'center',
+    fontSize: 24,
   },
 });
