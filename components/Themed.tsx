@@ -25,6 +25,7 @@ export function useThemeColor(
 
 type ThemeProps = {
   lightColor?: string;
+  
   darkColor?: string;
 };
 
