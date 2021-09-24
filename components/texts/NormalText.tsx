@@ -16,7 +16,7 @@ NomalText.defaultProps = {
 
 const styles = StyleSheet.create({
   text: {
-    color: 'gray',
+    color: 'white',
     fontSize: 16,
     fontWeight: 'normal',
   },

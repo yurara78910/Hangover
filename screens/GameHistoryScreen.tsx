@@ -6,9 +6,11 @@ import SubtitleText from '../components/texts/SubtitleText';
 export default function GameHistoryScreen() {
   return (
     <View style={styles.container}>
-      <View>
+      <View style={styles.historyListItem}>
         <View>
           <SubtitleText>川口　⇒　テツヤ</SubtitleText>
+        </View>
+        <View>
           <NomalText>300円</NomalText>
         </View>
         <View>
@@ -16,9 +18,11 @@ export default function GameHistoryScreen() {
         </View>
       </View>
 
-      <View>
+      <View style={styles.historyListItem}>
         <View>
           <SubtitleText>川口　⇒　テツヤ</SubtitleText>
+        </View>
+        <View>
           <NomalText>300円</NomalText>
         </View>
         <View>
@@ -26,9 +30,11 @@ export default function GameHistoryScreen() {
         </View>
       </View>
 
-      <View>
+      <View style={styles.historyListItem}>
         <View>
           <SubtitleText>川口　⇒　テツヤ</SubtitleText>
+        </View>
+        <View>
           <NomalText>300円</NomalText>
         </View>
         <View>
@@ -43,7 +49,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'rgba(56,56,56,0.8)',
+  },
+  historyListItem: {
+    backgroundColor: 'transparent',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     alignItems: 'center',
-    justifyContent: 'center',
+    paddingVertical: 16,
+    paddingHorizontal: 20,
+    borderBottomWidth: 1,
+    borderColor: 'rgba(255,255,255,0.15)',
   },
 });
