@@ -1,12 +1,12 @@
 import { FontAwesome } from '@expo/vector-icons';
 import * as React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, ScrollView, View } from 'react-native';
 import NomalText from '../components/texts/NormalText';
 import SubtitleText from '../components/texts/SubtitleText';
 
 export default function GameHistoryScreen() {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <View style={styles.historyListItem}>
         <View>
           <SubtitleText>川口　⇒　テツヤ</SubtitleText>
@@ -15,7 +15,7 @@ export default function GameHistoryScreen() {
           <NomalText>300円</NomalText>
         </View>
         <View>
-          <FontAwesome style={{ color: '#ffffff' }} name="remove" size={24} />
+          <FontAwesome style={{ color: '#ffffff' }} name="remove" size={20} />
         </View>
       </View>
 
@@ -27,7 +27,7 @@ export default function GameHistoryScreen() {
           <NomalText>300円</NomalText>
         </View>
         <View>
-          <FontAwesome style={{ color: '#ffffff' }} name="remove" size={24} />
+          <FontAwesome style={{ color: '#ffffff' }} name="remove" size={20} />
         </View>
       </View>
 
@@ -39,10 +39,10 @@ export default function GameHistoryScreen() {
           <NomalText>300円</NomalText>
         </View>
         <View>
-          <FontAwesome style={{ color: '#ffffff' }} name="remove" size={24} />
+          <FontAwesome style={{ color: '#ffffff' }} name="remove" size={20} />
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 }
 
