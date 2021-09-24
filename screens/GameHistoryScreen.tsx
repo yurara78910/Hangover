@@ -1,12 +1,40 @@
 import * as React from 'react';
-import { StyleSheet } from 'react-native';
-
-import { Text, View } from '../components/Themed';
+import { StyleSheet, View } from 'react-native';
+import NomalText from '../components/texts/NormalText';
+import SubtitleText from '../components/texts/SubtitleText';
 
 export default function GameHistoryScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab Two</Text>
+      <View>
+        <View>
+          <SubtitleText>川口　⇒　テツヤ</SubtitleText>
+          <NomalText>300円</NomalText>
+        </View>
+        <View>
+          <NomalText>X</NomalText>
+        </View>
+      </View>
+
+      <View>
+        <View>
+          <SubtitleText>川口　⇒　テツヤ</SubtitleText>
+          <NomalText>300円</NomalText>
+        </View>
+        <View>
+          <NomalText>X</NomalText>
+        </View>
+      </View>
+
+      <View>
+        <View>
+          <SubtitleText>川口　⇒　テツヤ</SubtitleText>
+          <NomalText>300円</NomalText>
+        </View>
+        <View>
+          <NomalText>X</NomalText>
+        </View>
+      </View>
     </View>
   );
 }
@@ -14,16 +42,8 @@ export default function GameHistoryScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: 'rgba(56,56,56,0.8)',
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
   },
 });
