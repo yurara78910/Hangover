@@ -1,6 +1,6 @@
 import { FontAwesome } from '@expo/vector-icons';
 import * as React from 'react';
-import { StyleSheet, ScrollView, View } from 'react-native';
+import { StyleSheet, ScrollView, View, TouchableOpacity } from 'react-native';
 import NormalText from '../components/texts/NormalText';
 import SubtitleText from '../components/texts/SubtitleText';
 
@@ -14,9 +14,9 @@ export default function GameHistoryScreen() {
         <View>
           <NormalText>300円</NormalText>
         </View>
-        <View>
+        <TouchableOpacity onPress={() => {}}>
           <FontAwesome style={{ color: '#ffffff' }} name="remove" size={20} />
-        </View>
+        </TouchableOpacity>
       </View>
 
       <View style={styles.historyListItem}>
@@ -26,9 +26,9 @@ export default function GameHistoryScreen() {
         <View>
           <NormalText>300円</NormalText>
         </View>
-        <View>
+        <TouchableOpacity>
           <FontAwesome style={{ color: '#ffffff' }} name="remove" size={20} />
-        </View>
+        </TouchableOpacity>
       </View>
 
       <View style={styles.historyListItem}>
@@ -38,9 +38,9 @@ export default function GameHistoryScreen() {
         <View>
           <NormalText>300円</NormalText>
         </View>
-        <View>
+        <TouchableOpacity>
           <FontAwesome style={{ color: '#ffffff' }} name="remove" size={20} />
-        </View>
+        </TouchableOpacity>
       </View>
     </ScrollView>
   );

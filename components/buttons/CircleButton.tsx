@@ -1,18 +1,19 @@
 import { FontAwesome } from '@expo/vector-icons';
-import React, { ReactNode } from 'react';
-import { StyleSheet, View } from 'react-native';
+import React from 'react';
+import { TouchableOpacity, StyleSheet } from 'react-native';
 
-export default function CircleButton(props: { name: any; style: any }) {
-  const { name, style } = props;
+export default function CircleButton(props: { name: any; style: any; onPress: any }) {
+  const { name, style, onPress } = props;
   return (
-    <View style={[styles.circleButton, style]}>
+    <TouchableOpacity style={[styles.circleButton, style]} onPress={onPress}>
       <FontAwesome style={{ color: '#ffffff' }} name={name} size={32} />
-    </View>
+    </TouchableOpacity>
   );
 }
 
 CircleButton.defaultProps = {
   style: null,
+  onPress: null,
 };
 
 const styles = StyleSheet.create({

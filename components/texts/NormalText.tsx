@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-export default function NomalText(props: { children: string; style: any }) {
+export default function NormalText(props: { children: string; style: any }) {
   const { children, style } = props;
   return (
     <View>
@@ -10,7 +10,7 @@ export default function NomalText(props: { children: string; style: any }) {
   );
 }
 
-NomalText.defaultProps = {
+NormalText.defaultProps = {
   style: null,
 };
 

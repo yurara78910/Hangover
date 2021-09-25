@@ -1,18 +1,19 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import NomalText from '../texts/NormalText';
+import { StyleSheet, TouchableOpacity } from 'react-native';
+import NormalText from '../texts/NormalText';
 
-export default function SquareButton(props: { children: string; style: any }) {
-  const { children, style } = props;
+export default function SquareButton(props: { children: string; style: any; onPress: any }) {
+  const { children, style, onPress } = props;
   return (
-    <View style={[styles.buttonContainer, style]}>
-      <NomalText>{children}</NomalText>
-    </View>
+    <TouchableOpacity style={[styles.buttonContainer, style]} onPress={onPress}>
+      <NormalText>{children}</NormalText>
+    </TouchableOpacity>
   );
 }
 
 SquareButton.defaultProps = {
   style: null,
+  onPress: null,
 };
 
 const styles = StyleSheet.create({

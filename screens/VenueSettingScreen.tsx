@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyleSheet, View, KeyboardAvoidingView } from 'react-native';
+import { StyleSheet, View, KeyboardAvoidingView, Alert } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
 import CircleButton from '../components/buttons/CircleButton';
 import TitleText from '../components/texts/TitleText';
@@ -15,7 +15,12 @@ export default function VenueSettingScreen() {
           <TextInput value="venue code" style={styles.input} />
         </View>
       </View>
-      <CircleButton name="plus" />
+      <CircleButton
+        name="plus"
+        onPress={() => {
+          Alert.alert('aaaaa');
+        }}
+      />
     </KeyboardAvoidingView>
   );
 }
