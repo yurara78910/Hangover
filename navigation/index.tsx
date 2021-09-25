@@ -38,6 +38,7 @@ function RootNavigator() {
         headerTitleStyle: { color: 'white' },
         headerTitle: 'Hangover',
         headerTintColor: 'white',
+        gestureEnabled: true,
       }}
     >
       <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
