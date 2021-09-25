@@ -1,25 +1,31 @@
 import * as React from 'react';
 import { StyleSheet, View, KeyboardAvoidingView } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
+import SizedBox from '../components/boxs/SizedBox';
 import CircleButton from '../components/buttons/CircleButton';
+import SquareButton from '../components/buttons/SquareButton';
 import TitleText from '../components/texts/TitleText';
 
-export default function VenueSettingScreen(props: { navigation: any }) {
+export default function VenueCreateScreen(props: { navigation: any }) {
   const { navigation } = props;
   return (
     <KeyboardAvoidingView style={styles.container} behavior="height">
       <View style={styles.column}>
-        <View>
-          <TitleText>会場コード</TitleText>
+        <TitleText>会場情報</TitleText>
+        <View style={styles.inputContainer}>
+          <TextInput style={styles.input} value="Venue code" />
         </View>
         <View style={styles.inputContainer}>
-          <TextInput value="venue code" style={styles.input} />
+          <TextInput style={styles.input} value="Venue name" />
+        </View>
+        <View style={styles.inputContainer}>
+          <TextInput style={styles.input} value="Unit of measure" />
         </View>
       </View>
       <CircleButton
-        name="plus"
+        name="check"
         onPress={() => {
-          navigation.navigate('VenueCreate');
+          navigation.goBack();
         }}
       />
     </KeyboardAvoidingView>

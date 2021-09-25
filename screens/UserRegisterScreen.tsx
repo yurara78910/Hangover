@@ -1,12 +1,13 @@
 import React from 'react';
-import { View, TextInput, StyleSheet } from 'react-native';
+import { View, TextInput, StyleSheet, KeyboardAvoidingView } from 'react-native';
 import SizedBox from '../components/boxs/SizedBox';
 import SquareButton from '../components/buttons/SquareButton';
 import TitleText from '../components/texts/TitleText';
 
-export default function RegisterScreen() {
+export default function UserRegisterScreen(props: { navigation: any }) {
+  const { navigation } = props;
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView style={styles.container} behavior="height">
       <View style={styles.column}>
         <TitleText>プレイヤー情報</TitleText>
         <SizedBox style={undefined} />
@@ -16,9 +17,18 @@ export default function RegisterScreen() {
         <View style={styles.inputContainer}>
           <TextInput style={styles.input} value="Email Address" />
         </View>
-        <SquareButton>登録する</SquareButton>
+        <SquareButton
+          onPress={() => {
+            navigation.reset({
+              index: 0,
+              routes: [{ name: 'Root' }],
+            });
+          }}
+        >
+          登録する
+        </SquareButton>
       </View>
-    </View>
+    </KeyboardAvoidingView>
   );
 }
 

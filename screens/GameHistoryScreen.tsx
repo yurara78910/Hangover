@@ -15,7 +15,7 @@ export default function GameHistoryScreen() {
           <NormalText>300円</NormalText>
         </View>
         <TouchableOpacity onPress={() => {}}>
-          <FontAwesome style={{ color: '#ffffff' }} name="remove" size={20} />
+          <FontAwesome style={{ color: '#ffffff', padding: 8 }} name="remove" size={20} />
         </TouchableOpacity>
       </View>
 
@@ -27,7 +27,7 @@ export default function GameHistoryScreen() {
           <NormalText>300円</NormalText>
         </View>
         <TouchableOpacity>
-          <FontAwesome style={{ color: '#ffffff' }} name="remove" size={20} />
+          <FontAwesome style={{ color: '#ffffff', padding: 8 }} name="remove" size={20} />
         </TouchableOpacity>
       </View>
 
@@ -39,7 +39,7 @@ export default function GameHistoryScreen() {
           <NormalText>300円</NormalText>
         </View>
         <TouchableOpacity>
-          <FontAwesome style={{ color: '#ffffff' }} name="remove" size={20} />
+          <FontAwesome style={{ color: '#ffffff', padding: 8 }} name="remove" size={20} />
         </TouchableOpacity>
       </View>
     </ScrollView>

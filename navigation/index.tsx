@@ -9,11 +9,12 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import VenueSettingScreen from '../screens/VenueSettingScreen';
 import NotFoundScreen from '../screens/NotFoundScreen';
-import GameResultsScreen from '../screens/GameResultsScreen';
+import PlayerResultsScreen from '../screens/PlayerResultsScreen';
 import GameHistoryScreen from '../screens/GameHistoryScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
-import RegisterScreen from '../screens/RegisterScreen';
+import UserRegisterScreen from '../screens/UserRegisterScreen';
+import VenueCreateScreen from '../screens/VenueCreateScreen';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
@@ -30,14 +31,25 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      initialRouteName="UserRegister"
+      screenOptions={{
+        headerStyle: { backgroundColor: 'rgba(29,31,33,1)' },
+        headerTitleStyle: { color: 'white' },
+        headerTitle: 'Hangover',
+        headerTintColor: 'white',
+      }}
+    >
       <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name="VenueSetting" component={VenueSettingScreen} />
       </Stack.Group>
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
-        <Stack.Screen name="Register" component={RegisterScreen} />
+        <Stack.Screen name="VenueCreate" component={VenueCreateScreen} />
+      </Stack.Group>
+      <Stack.Group screenOptions={{ presentation: 'modal' }}>
+        <Stack.Screen name="UserRegister" component={UserRegisterScreen} />
       </Stack.Group>
     </Stack.Navigator>
   );
@@ -57,14 +69,14 @@ function BottomTabNavigator() {
     >
       <BottomTab.Screen
         name="TabOne"
-        component={GameResultsScreen}
+        component={PlayerResultsScreen}
         options={({ navigation }: RootTabScreenProps<'TabOne'>) => ({
           title: 'ゲーム結果',
           headerTitleAlign: 'center',
           tabBarIcon: ({ color }) => <TabBarIcon name="dollar" color={color} />,
           headerLeft: () => (
             <Pressable
-              onPress={() => navigation.navigate('Register')}
+              onPress={() => navigation.navigate('UserRegister')}
               style={({ pressed }) => ({
                 opacity: pressed ? 0.5 : 1,
               })}
