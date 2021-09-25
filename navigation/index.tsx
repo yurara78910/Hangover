@@ -20,8 +20,7 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
   return (
     <NavigationContainer
       linking={LinkingConfiguration}
-      theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}
-    >
+      theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <RootNavigator />
     </NavigationContainer>
   );
@@ -39,8 +38,7 @@ function RootNavigator() {
         headerTitle: 'Hangover',
         headerTintColor: 'white',
         gestureEnabled: true,
-      }}
-    >
+      }}>
       <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
@@ -66,8 +64,7 @@ function BottomTabNavigator() {
       initialRouteName="TabOne"
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme].tint,
-      }}
-    >
+      }}>
       <BottomTab.Screen
         name="TabOne"
         component={PlayerResultsScreen}
@@ -80,8 +77,7 @@ function BottomTabNavigator() {
               onPress={() => navigation.navigate('UserRegister')}
               style={({ pressed }) => ({
                 opacity: pressed ? 0.5 : 1,
-              })}
-            >
+              })}>
               <FontAwesome
                 name="smile-o"
                 size={32}
@@ -95,8 +91,7 @@ function BottomTabNavigator() {
               onPress={() => navigation.navigate('VenueSetting')}
               style={({ pressed }) => ({
                 opacity: pressed ? 0.5 : 1,
-              })}
-            >
+              })}>
               <FontAwesome
                 name="gamepad"
                 size={32}
