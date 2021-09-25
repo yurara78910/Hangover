@@ -13,6 +13,7 @@ import GameResultsScreen from '../screens/GameResultsScreen';
 import GameHistoryScreen from '../screens/GameHistoryScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
+import RegisterScreen from '../screens/RegisterScreen';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
@@ -34,6 +35,9 @@ function RootNavigator() {
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name="VenueSetting" component={VenueSettingScreen} />
+      </Stack.Group>
+      <Stack.Group screenOptions={{ presentation: 'modal' }}>
+        <Stack.Screen name="Register" component={RegisterScreen} />
       </Stack.Group>
     </Stack.Navigator>
   );
@@ -58,6 +62,21 @@ function BottomTabNavigator() {
           title: 'ゲーム結果',
           headerTitleAlign: 'center',
           tabBarIcon: ({ color }) => <TabBarIcon name="dollar" color={color} />,
+          headerLeft: () => (
+            <Pressable
+              onPress={() => navigation.navigate('Register')}
+              style={({ pressed }) => ({
+                opacity: pressed ? 0.5 : 1,
+              })}
+            >
+              <FontAwesome
+                name="smile-o"
+                size={32}
+                color={Colors[colorScheme].text}
+                style={{ marginRight: 15 }}
+              />
+            </Pressable>
+          ),
           headerRight: () => (
             <Pressable
               onPress={() => navigation.navigate('VenueSetting')}

@@ -1,10 +1,19 @@
+import { FontAwesome } from '@expo/vector-icons';
 import React, { ReactNode } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-export default function CircleButton(props: { children: ReactNode }) {
-  const { children } = props;
-  return <View style={styles.circleButton}>{children}</View>;
+export default function CircleButton(props: { name: any; style: any }) {
+  const { name, style } = props;
+  return (
+    <View style={[styles.circleButton, style]}>
+      <FontAwesome style={{ color: '#ffffff' }} name={name} size={32} />
+    </View>
+  );
 }
+
+CircleButton.defaultProps = {
+  style: null,
+};
 
 const styles = StyleSheet.create({
   circleButton: {

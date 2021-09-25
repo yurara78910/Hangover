@@ -1,7 +1,7 @@
 import { FontAwesome } from '@expo/vector-icons';
 import * as React from 'react';
 import { StyleSheet, ScrollView, View } from 'react-native';
-import NomalText from '../components/texts/NormalText';
+import NormalText from '../components/texts/NormalText';
 import SubtitleText from '../components/texts/SubtitleText';
 
 export default function GameHistoryScreen() {
@@ -12,7 +12,7 @@ export default function GameHistoryScreen() {
           <SubtitleText>川口　⇒　テツヤ</SubtitleText>
         </View>
         <View>
-          <NomalText>300円</NomalText>
+          <NormalText>300円</NormalText>
         </View>
         <View>
           <FontAwesome style={{ color: '#ffffff' }} name="remove" size={20} />
@@ -24,7 +24,7 @@ export default function GameHistoryScreen() {
           <SubtitleText>川口　⇒　テツヤ</SubtitleText>
         </View>
         <View>
-          <NomalText>300円</NomalText>
+          <NormalText>300円</NormalText>
         </View>
         <View>
           <FontAwesome style={{ color: '#ffffff' }} name="remove" size={20} />
@@ -36,7 +36,7 @@ export default function GameHistoryScreen() {
           <SubtitleText>川口　⇒　テツヤ</SubtitleText>
         </View>
         <View>
-          <NomalText>300円</NomalText>
+          <NormalText>300円</NormalText>
         </View>
         <View>
           <FontAwesome style={{ color: '#ffffff' }} name="remove" size={20} />
