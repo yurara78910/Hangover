@@ -1,13 +1,24 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { View, TextInput, StyleSheet, KeyboardAvoidingView } from 'react-native';
 import SizedBox from '../components/boxs/SizedBox';
 import SquareButton from '../components/buttons/SquareButton';
 import TitleText from '../components/texts/TitleText';
+import { db } from '../App';
 
 export default function UserRegisterScreen(props: { navigation: any }) {
+  function handlePless() {
+    navigation.reset({
+      index: 0,
+      routes: [{ name: 'Root' }],
+    });
+    // dbSnapshot.g;
+  }
+
   const { navigation } = props;
+  const dbSnapshot = useContext(db);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+
   return (
     <KeyboardAvoidingView style={styles.container} behavior="height">
       <View style={styles.column}>
@@ -37,15 +48,7 @@ export default function UserRegisterScreen(props: { navigation: any }) {
             textContentType="emailAddress"
           />
         </View>
-        <SquareButton
-          onPress={() => {
-            navigation.reset({
-              index: 0,
-              routes: [{ name: 'Root' }],
-            });
-          }}>
-          登録する
-        </SquareButton>
+        <SquareButton onPress={handlePless}>登録する</SquareButton>
       </View>
     </KeyboardAvoidingView>
   );
@@ -74,3 +77,6 @@ const styles = StyleSheet.create({
     fontSize: 24,
   },
 });
+function FirebaseContext(FirebaseContext: any) {
+  throw new Error('Function not implemented.');
+}
